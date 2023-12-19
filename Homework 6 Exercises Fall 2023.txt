@@ -1,0 +1,103 @@
+6.6) Race conditions are possible in many computer systems. Consider a banking system that maintains an account 
+balance with two functions: deposit(amount) and withdraw(amount). These two functions are passed the amount 
+that is to be deposited or withdrawn from the bank account balance. Assume that a husband and wife share a 
+bank account. Concurrently, the husband calls the withdraw() function, and the wife calls deposit(). 
+Describe how a race condition is possible and what might be done to prevent the race condition from occurring.
+
+Answer: 
+
+Assume that the balance in the account is $250.00 and that the husband calls withdraw($50) and the  wife calls 
+deposit($100). Obviously, the correct value should be $300.00. The local value of the balance for the husband 
+becomes $200.00, but before he can commit the transaction, the deposit(100) operation takes place and updates 
+the shared value of the balance to $350.00. We then switch back to the husband, and the value of the shared 
+balance is set to $200.00 — obviously an incorrect value.
+
+
+6.7) The pseudocode of Figure 6.15 illustrates the basic push() and pop() operations of an array-based stack.
+Assuming that this algorithm could be used in a concurrent environment, answer the following questions:
+
+a. What data have a race condition? 
+
+b. How could the race condition be fixed? 
+
+
+Answer: 
+
+a. There is a race condition on the variable top. Assume that the push() and pop() functions are called 
+   concurrently. Before the stack[top] = item statement can be performed (preempted push()), the top-- statement is performed
+   in pop() and then preempted. The item being pushed will then replace what currently exists at location stack[top]. 
+
+b. The race condition could be fixed with mutex locks. 
+
+push(item) {
+	 if (top < SIZE) { 
+		stack[top] = item; 
+		top++; 
+		}
+	 else 
+		ERROR 
+	} 
+
+
+pop() { 
+	if (!is empty()) { 
+		top--; 
+		return stack[top]; 
+		}
+		 else 
+			ERROR 
+	}
+
+
+ is empty() { 
+	if (top == 0) 
+		return true; 
+	else 
+		return false; 
+  } 
+
+
+6.8) Race conditions are possible in many computer systems. Consider an online auction system where the 
+     current highest bid for each item must be maintained. A person who wishes to bid on an item calls 
+     the bid(amount) function, which compares the amount being bid to the current highest bid. If the
+     amount exceeds the current highest bid, the highest bid is set to the new amount. This is illustrated
+     below: 
+
+     void bid(double amount) { 
+		if (amount > highestBid)
+			 highestBid = amount;
+     } 
+
+	
+	Describe how a race condition is possible in this situation and what might be done to prevent the 
+	race condition from occurring.
+
+	Answer: The bid() function will look similar to: 
+
+	void bid(double amount) { 
+		if (amount > highestBid) 
+			highestBid = amount; 
+      } 
+
+	There is a race condition on the variable highestBid. Suppose that two people wish to bid on an old 
+	Macintosh computer, and the current highest bid is $1,200. Two people then bid concurrently: 
+
+	The first person bids $1,300, and the second person bids $1,400. The first person invokes the bid() 
+     function, which determines that the bid exceeds the current high-est bid. But before highestBid can
+     be set, the second person invokes bid(),and highestBid is set to $1,400. Control then returns to the
+     first person, which completes the bid() function and sets highestBid to $1,300. The easiest way of 
+     fixing this race condition is to use a mutex lock: 
+
+	void bid(double amount) { 
+		acquire(); 
+
+		if (amount > highestBid) 
+			highestBid = amount; 
+		
+		release(); 
+     }
+
+
+
+
+

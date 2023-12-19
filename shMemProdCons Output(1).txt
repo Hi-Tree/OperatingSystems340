@@ -1,0 +1,148 @@
+$ ./shMemProdCons.exe
+Parent: next element produced at 0 has value 0
+
+Parent: next element produced at 1 has value 1
+
+Parent: next element produced at 2 has value 2
+
+Parent: next element produced at 3 has value 3
+
+Parent: next element produced at 4 has value 4
+
+Parent: next element produced at 5 has value 5
+
+Parent: next element produced at 6 has value 6
+
+Parent: next element produced at 7 has value 7
+
+Parent: next element produced at 8 has value 8
+
+Child: next element consumed at 0 has value 0
+
+Child: next element consumed at 1 has value 1
+Parent: next element produced at 9 has value 9
+
+
+Child: next element consumed at 2 has value 2
+Parent: next element produced at 0 has value 10
+
+
+Child: next element consumed at 3 has value 3
+Parent: next element produced at 1 has value 11
+
+
+Child: next element consumed at 4 has value 4
+Parent: next element produced at 2 has value 12
+
+
+Child: next element consumed at 5 has value 5
+Parent: next element produced at 3 has value 13
+
+Child: next element consumed at 6 has value 6
+
+
+Parent: next element produced at 4 has value 14
+Child: next element consumed at 7 has value 7
+
+
+Parent: next element produced at 5 has value 15
+Child: next element consumed at 8 has value 8
+
+
+Parent: next element produced at 6 has value 16
+Child: next element consumed at 9 has value 9
+
+
+Parent: next element produced at 7 has value 17
+Child: next element consumed at 0 has value 10
+
+
+Parent: next element produced at 8 has value 18
+Child: next element consumed at 1 has value 11
+
+
+Parent: next element produced at 9 has value 19
+Child: next element consumed at 2 has value 12
+
+
+Parent: next element produced at 0 has value 20
+Child: next element consumed at 3 has value 13
+
+
+Parent: next element produced at 1 has value 21
+Child: next element consumed at 4 has value 14
+
+Parent: next element produced at 2 has value 22
+
+
+Child: next element consumed at 5 has value 15
+Parent: next element produced at 3 has value 23
+
+
+Child: next element consumed at 6 has value 16
+Parent: next element produced at 4 has value 24
+
+
+Child: next element consumed at 7 has value 17
+Parent: next element produced at 5 has value 25
+
+
+Child: next element consumed at 8 has value 18
+Parent: next element produced at 6 has value 26
+Child: next element consumed at 9 has value 19
+Parent: next element produced at 7 has value 27
+
+
+Child: next element consumed at 0 has value 20
+Parent: next element produced at 8 has value 28
+
+
+Child: next element consumed at 1 has value 21
+Parent: next element produced at 9 has value 29
+
+
+Child: next element consumed at 2 has value 22
+Parent: next element produced at 0 has value 30
+
+
+Child: next element consumed at 3 has value 23
+Parent: next element produced at 1 has value 31
+
+
+Child: next element consumed at 4 has value 24
+Parent: next element produced at 2 has value 32
+
+
+Child: next element consumed at 5 has value 25
+Parent: next element produced at 3 has value 33
+
+
+Child: next element consumed at 6 has value 26
+Parent: next element produced at 4 has value 34
+
+
+Child: next element consumed at 7 has value 27
+Parent: next element produced at 5 has value 35
+
+
+Child: next element consumed at 8 has value 28
+Parent: after producer loop.. waiting for child termination
+
+Child: next element consumed at 9 has value 29
+
+Child: next element consumed at 0 has value 30
+
+Child: next element consumed at 1 has value 31
+
+Child: next element consumed at 2 has value 32
+
+Child: next element consumed at 3 has value 33
+
+Child: next element consumed at 4 has value 34
+
+Child: next element consumed at 5 has value 35
+
+Child: after consumer loop ... terminating
+Parent: Child normal termination
+Parent: Child exit status is 0
+Parent: Terminating

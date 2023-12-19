@@ -1,0 +1,51 @@
+2.9) The services and functions provided by an operating system can be divided into two main categories. 
+Briefly describe the two categories, and discuss how they differ. 
+
+Answer: Services and functions provided by an operating system may be provided to either a user or 
+towards proper funtioning of the system. Services provided to the user reflect the ease and functionality 
+the system must provide for the user to interact with the system. Services that ensure efficient operation
+of the system involve allocating system resources and well as providing the necessary protection and 
+security of the system.  (See Section 2.7.2)
+
+
+2.10) Describe three general methods for passing parameters to the operating system.
+
+Answer: a. Parameters can be passed in registers. 
+	   b. Registers can pass starting addresses of blocks of parameters.
+	   c. Parameters can be placed, or pushed, onto the stack by the program and popped off the stack 
+		 by the operating system.
+
+(See Section 2.3.2)
+
+
+2.12) What are the advantages and disadvantages of using the same system-call interface for manipulating 
+	both files and devices? 
+
+Answer: An advantage of using the same system-call interface for manipulating both files and devices is that,
+        since most of the kernel deals with devices through this interface, it is relatively easy to add a
+	  new device driver by implementing the appropriate hardware-specific code. This benefits the development
+	  of both user program code, which can be written to access devices and files in the same manner, and
+       device-driver code, which can be written to support a well-defined API. The disadvantage of using the 
+	  same interface is that it might be difficult to capture the functionality of certain devices within the 
+	  context of the file-access API, resulting in either a loss of functionality or a loss of performance. 
+
+
+2.15)  What are the two models of interprocess communication? What are the strengths and weaknesses of the
+	  two approaches?
+
+Answer: The two models of interprocess communication (IPC) are the message-passing model and the shared-memory model.
+	   Message passing is useful for exchanging smaller amounts of data, because no synchronization is required.
+        It is also easier to implement than is shared memory for intercomputer communication but it is slower than
+        shared memory because the kernel is involved on each send and receive from the message queue. Shared memory 
+	   allows maximum speed and convenience of communication, since it can be done at memory transfer speeds
+        when it takes place within a computer. However, this method involves problems in the areas of protection
+        and synchronization between the processes sharing memory. More on this topic in Chapter 3. If alot of data
+        is to be shared among processes, shared memory is preferred to avoid the creation of large messages with 
+        message queuing. (See Section 2.3.3.5)
+
+
+2.20)  What are the advantages of using loadable kernel modules? 
+
+Answer: It is difficult to predict what features an operating system will need when it is being designed. The 
+        advantage of using loadable kernel modules is that functionality can be added to and removed from the 
+        kernel while it is running. There is no need to either recompile or reboot the kernel. (See Section 2.8.4)

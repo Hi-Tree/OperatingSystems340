@@ -1,0 +1,16 @@
+4.6)  What resources are used when a thread is created? How do they differ from those used when a process is created? 
+
+      Answer: Because a thread is smaller than a process, thread creation typically uses fewer resources 
+	than process creation. Creating a process requires allocating a process control block (PCB), a rather 
+	large data structure. The PCB includes a memory map, a list of open files, and environment variables. 
+      Allocating and managing the memory map is typically the most time-consuming activity. Creating either
+      a user thread involves allocating a small data structure to hold a register set,
+	stack, and priority.
+
+
+4.13)  Is it possible to have concurrency but not parallelism? Explain. 
+
+	 Answer: Yes. Concurrency means that more than one thread is progressing. However, it does not 
+	 imply that the threads are running on CPUs simultaneously. The scheduling of tasks allows for concurrency, but
+	 parallelism is supported only on systems with more than one processing core. 
+
